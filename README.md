@@ -3,8 +3,8 @@
 This is and AngularJS directive which provides validation for common Spanish official ID numbers like DNI or NIF.
 
 
-![wrong](https://dl.dropboxusercontent.com/u/759388/Captura%20de%20Tela%202015-03-16%20%C3%A0s%2014.53.28.png)
-![right](https://dl.dropboxusercontent.com/u/759388/Captura%20de%20Tela%202015-03-16%20%C3%A0s%2014.54.00.png)
+![wrong](https://dl.dropboxusercontent.com/u/759388/wrong.png)
+![right](https://dl.dropboxusercontent.com/u/759388/ok.png)
 
 
 ###Usage and examples
