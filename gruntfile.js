@@ -8,7 +8,7 @@ module.exports = function(grunt) {
             port: 8080,
             keepalive:true,
             open: {
-              target: 'http://localhost:8080/src'
+              target: 'http://localhost:8080/test/index.html'
             }            
           },
         }
@@ -18,5 +18,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['web']);
   
   grunt.registerTask('web', ['connect:server']);
+  
+  grunt.loadNpmTasks('grunt-contrib-connect');
   
 };
