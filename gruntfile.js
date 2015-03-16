@@ -3,45 +3,42 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     connect: {
-      'static': {
-            options: {
-                hostname: 'localhost',
-                port: 8081
-            }
-        },
         server: {
           options: {
             hostname: 'localhost',
             port: 8080,
             keepalive:true,
-            middleware: function(connect) {
-              return [proxySnippet];
-            },
             open: {
               target: 'http://localhost:8080/src/index.html'
             }            
           },
-          proxies: [
-          {
-              context: '/api',
-              host: 'localhost',
-              port: 36853
-          },
-          {
-              context: '/',
-              host: 'localhost',
-              port: 8081
-          }          
-          ]
         }
      },
+      uglify: {
+        options: {
+          mangle: false
+        },
+        files: { 
+               src: 'src/*/*.js',  // source files mask
+               dest: 'build/',    // destination folder
+               expand: true,    // allow dynamic building
+               flatten: true,   // remove all unnecessary nesting
+           },
+      },
   });
 
-  grunt.registerTask('default', ['web']);
+  grunt.registerTask('default', ['web','uglify'], function (){
+    grunt.task.run('uglify');
+  });
   
   //grunt.registerTask('web', ['connect']);
   grunt.registerTask('web', ['connect:static', 'configureProxies:server', 'connect:server']);
+  grunt.registerTask('uglify', ['connect:static', 'configureProxies:server', 'connect:server']);
 
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-connect-proxy');
+
+  // Load the plugin that provides the "uglify" task.
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  
 };

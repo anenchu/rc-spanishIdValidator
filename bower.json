@@ -1,0 +1,20 @@
+{
+  "name": "ValidatorIdSpanish",
+  "version": "0.0.0",
+  "homepage": "https://github.com/anenchu/rc-spanishIdValidator",
+  "authors": [
+    "AngelaPrades <angelaprades@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.3.4",
+    "angularjs": "~1.3.14"
+  }
+}
