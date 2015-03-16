@@ -1,5 +1,4 @@
 module.exports = function(grunt) {
-  var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
 
   grunt.initConfig({
     connect: {
@@ -32,11 +31,10 @@ module.exports = function(grunt) {
   });
   
   //grunt.registerTask('web', ['connect']);
-  grunt.registerTask('web', ['connect:static', 'configureProxies:server', 'connect:server']);
-  grunt.registerTask('uglify', ['connect:static', 'configureProxies:server', 'connect:server']);
+  grunt.registerTask('web', ['connect:server']);
+  grunt.registerTask('uglify', ['connect:server']);
 
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-connect-proxy');
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
