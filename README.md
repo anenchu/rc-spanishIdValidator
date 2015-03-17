@@ -2,12 +2,12 @@
 
 This is and AngularJS library which provides validation directives for common Spanish official ID numbers like DNI or NIF.
 
-##Usage and examples
+###Usage and examples
 
 Usage of the validation directives it's very easy.
 Each input you want to validate must contain the **ng-model** and the directive, **rc-dni** in this example. Now the directive will set invalid the input if it is not correct.
 
-```javascript
+```
 <input type="text" 
           rc-dni=""
           ng-model="model.dni" 
@@ -16,10 +16,10 @@ Each input you want to validate must contain the **ng-model** and the directive,
 
 For more information visit the tutorial page to see the **Getting started** tutorial and code samples.
 
-##Dependencies
+###Dependencies
 * AngularJS
 
-##Contributors
+###Contributors
 * [Braulio Diez](https://github.com/brauliodiez)
 * [Ana Belén Gallardo](https://github.com/anenchu) 
 * [Ángela Prades](https://github.com/AngelaPrades) 
