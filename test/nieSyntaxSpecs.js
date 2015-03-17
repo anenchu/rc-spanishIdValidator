@@ -1,8 +1,10 @@
 describe('Testing nie syntax services', function() {
+	var $injector;
+	var syntaxServices;
 
-	beforeEach(function() {
-		// load the module
-		module('services');
+	beforeEach(function(){
+		$injector =angular.injector(['ng','app.services']);
+		syntaxServices = $injector.get('syntaxServices');
 	});
 
 	it('Inform a syntactically valid NIE', function() {

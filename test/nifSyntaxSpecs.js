@@ -1,8 +1,10 @@
 describe('Testing nif syntax services', function() {
+	var $injector;
+	var syntaxServices;
 
-	beforeEach(function() {
-		// load the module
-		module('services');
+	beforeEach(function(){
+		$injector = angular.injector(['ng','app.services']);
+		syntaxServices = $injector.get('syntaxServices');
 	});
 
 	it('Inform a syntactically valid NIF', function() {
@@ -18,7 +20,7 @@ describe('Testing nif syntax services', function() {
     var isNif = syntaxServices.validateNifSyntax(nif);
 
 		// test to see if we get a not valid value
-		expect(isNif).toBe(true);
+		expect(isNif).toBe(false);
 	});
 
 	it('Inform a syntactically wrong NIF (no control letter)', function() {
@@ -26,7 +28,7 @@ describe('Testing nif syntax services', function() {
     var isNif = syntaxServices.validateNifSyntax(nif);
 
 		// test to see if we get a not valid value
-		expect(isNif).toBe(true);
+		expect(isNif).toBe(false);
 	});
 
 	it('Inform a syntactically wrong NIF (wrong letter)', function() {
@@ -34,7 +36,7 @@ describe('Testing nif syntax services', function() {
     var isNif = syntaxServices.validateNifSyntax(nif);
 
 		// test to see if we get a not valid value
-		expect(isNif).toBe(true);
+		expect(isNif).toBe(false);
 	});
 
 });
