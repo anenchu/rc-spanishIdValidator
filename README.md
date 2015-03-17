@@ -4,7 +4,7 @@ This is and AngularJS library which provides validation directives for common Sp
 
 ###Usage and examples
 
-Usage of the validation directives it's very easy.
+The usage of the validation directives is very easy.
 Each input you want to validate must contain the **ng-model** and the directive, **rc-dni** in this example. Now the directive will set invalid the input if it is not correct.
 
 ```
