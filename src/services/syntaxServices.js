@@ -12,11 +12,8 @@ services.factory('syntaxServices', [function() {
 		return niePattern.test(nie);
 	}
 
-  function validateNifNieSyntax(nifNie) {
-    return validateNifSyntax(nifNie) || validateNieSyntax(nifNie);
-  }
-
   return {
-    validateNifNieSyntax: validateNifNieSyntax
+  	validateNifSyntax: validateNifSyntax,
+    validateNieSyntax: validateNieSyntax
   }
 }]);
