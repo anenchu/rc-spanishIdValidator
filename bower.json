@@ -1,0 +1,17 @@
+{
+  "name": "rc-spanishIdValidator",
+  "version": "0.0.0",
+  "homepage": "https://github.com/anenchu/rc-spanishIdValidator",
+  "authors": [
+    "javimarin <fjmf83@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ]
+}
