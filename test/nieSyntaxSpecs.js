@@ -3,7 +3,7 @@ describe('Testing nie syntax services', function() {
 	var syntaxServices;
 
 	beforeEach(function(){
-		$injector =angular.injector(['ng','app.services']);
+		$injector = angular.injector(['ng','app.services']);
 		syntaxServices = $injector.get('syntaxServices');
 	});
 
