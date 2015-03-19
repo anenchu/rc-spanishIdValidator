@@ -7,7 +7,8 @@ describe('Testing rcdni directive',function(){
       	form;
 
     beforeEach(function(){						
-    	module('app.directives');					
+    	module('app.directives');
+      module('app.services');					
     	html = '<form name="patientForm">' +		
     			'<input type=text id=dni name="dni" rc-dni="" ng-model="fields.dni" />'
     			'</form>';
@@ -25,13 +26,13 @@ describe('Testing rcdni directive',function(){
 	});
 		
 	it('Inform a valid DNI', function(){
-		form.dni.$setViewValue("68710415P");				
+		form.dni.$setViewValue("44591313V");				
 		scope.$digest();									
 		expect(form.dni.$valid).toBe(true);
 	});
 
 	it('Inform a wrong DNI',function(){
-		form.dni.$setViewValue("25691568H");
+		form.dni.$setViewValue("11111111A");
 		scope.$digest();
 		expect(form.dni.$valid).toBe(false);				
 	})

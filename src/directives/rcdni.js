@@ -8,21 +8,25 @@ directives.directive('rcDni',['dniSemanticsValidationService','dniSyntaxValidati
 			};
 
 			function validateDNI(dni){
-				validateDNISyntax(dni);
-				validateDNISemantics(dni);
+				if (validateDNISyntax(dni)){
+					validateDNISemantics(dni);
+				}
 			}
 
-			function validateDNISemantics(dni){								
-				if (dniSemanticsValidationService.validateDNISemantics(currentTypedValue)){			
+			function validateDNISemantics(dni){
+				var isValid = dniSemanticsValidationService.validateDNISemantics(dni); 								
+				if (isValid){			
 					ctrl.$setValidity('pattern',true);
 				}else{
 					ctrl.$setValidity('pattern',false);
 				}
+				return isValid;
 			};
 
 			function validateDNISyntax(dni)
             {
-            	if (dniSyntaxValidationService.validateDNISyntax(dni)){
+            	var isValid = dniSyntaxValidationService.validateDNISyntax(dni);
+            	if (isValid){
 					ctrl.$setValidity('dni',true);
 				}else{
 					ctrl.$setValidity('dni',false);
