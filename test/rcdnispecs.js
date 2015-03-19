@@ -26,13 +26,13 @@ describe('Testing rcdni directive',function(){
 	});
 		
 	it('Inform a valid DNI', function(){
-		form.dni.$setViewValue("44591313V");				
+		form.dni.$setViewValue("27904426K");				
 		scope.$digest();									
 		expect(form.dni.$valid).toBe(true);
 	});
 
 	it('Inform a wrong DNI',function(){
-		form.dni.$setViewValue("11111111A");
+		form.dni.$setViewValue("27904426T");
 		scope.$digest();
 		expect(form.dni.$valid).toBe(false);				
 	})
