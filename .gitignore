@@ -2,3 +2,6 @@ lib/
 tools/node_modules/
 node_modules/
 *.orig
+testrunner/
+.bowerrc
+.gitignore
