@@ -1,11 +1,10 @@
 # rc-spanishIdValidator [Work in progress] 
 
-This is and AngularJS library which provides validation directives for common Spanish official ID numbers like DNI or NIF.
+This is an AngularJS library which provides validation directives for common Spanish official ID numbers like DNI or NIF.
 
 ###Usage and examples
 
-The usage of the validation directives is very easy.
-Each input you want to validate must contain the **ng-model** and the directive, **rc-dni** in this example. Now the directive will set invalid the input if it is not correct.
+Each input you want to validate must contain the ng-model and the custom directive rc-dni. An example of application can be found below:
 
 ```
 <input type="text" 
@@ -14,7 +13,14 @@ Each input you want to validate must contain the **ng-model** and the directive,
           />
 ```
 
-For more information visit the tutorial page to see the **Getting started** tutorial and code samples.
+
+If a non-valid number of document is provided in this input element, AngularJS will identify it as a validation error.
+
+![ok](https://dl.dropboxusercontent.com/u/759388/ok.png)
+![wrong(https://dl.dropboxusercontent.com/u/759388/wrong.png)
+
+
+For more information, see **Getting started** section and code examples in tutorials page.
 
 ###Dependencies
 * AngularJS
@@ -35,3 +41,7 @@ For more information visit the tutorial page to see the **Getting started** tuto
 * [Carlos Alberto Sánchez](https://github.com/casaki)
 * [Javier Marin](https://github.com/javiermarin)
 * [Anxo Fole](https://github.com/anxofole)
+
+###License
+
+The MIT License (MIT)
