@@ -1,0 +1,26 @@
+{
+  "name": "ValidatorIdSpanish",
+  "version": "1.0.0",
+  "description": "[Work in progress] This Angular library provides directives for the validation of common Spanish official ID documents.",
+  "main": "gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://AngelaPrades@github.com/anenchu/rc-spanishIdValidator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anenchu/rc-spanishIdValidator/issues"
+  },
+  "homepage": "https://github.com/anenchu/rc-spanishIdValidator",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.9.0"
+  }
+}
