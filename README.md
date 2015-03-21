@@ -17,7 +17,7 @@ Each input you want to validate must contain the ng-model and the custom directi
 If a non-valid number of document is provided in this input element, AngularJS will identify it as a validation error.
 
 ![ok](https://dl.dropboxusercontent.com/u/759388/ok.png)
-![wrong(https://dl.dropboxusercontent.com/u/759388/wrong.png)
+![wrong](https://dl.dropboxusercontent.com/u/759388/wrong.png)
 
 
 For more information, see **Getting started** section and code examples in tutorials page.
