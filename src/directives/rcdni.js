@@ -1,4 +1,6 @@
-directives.directive('rcDni',['dniSemanticsValidationService','dniSyntaxValidationService',function(dniSemanticsValidationService,dniSyntaxValidationService){
+directives.directive('rcDni',['dniSemanticsValidationService','dniSyntaxValidationService',rcDni]);
+function rcDni(dniSemanticsValidationService,dniSyntaxValidationService)
+{
 	return{
 		require: 'ngModel',					
 		link: function (scope, elm, attrs, ctrl){	
@@ -16,9 +18,9 @@ directives.directive('rcDni',['dniSemanticsValidationService','dniSyntaxValidati
 			function validateDNISemantics(dni){
 				var isValid = dniSemanticsValidationService.validateDNISemantics(dni); 								
 				if (isValid){			
-					ctrl.$setValidity('pattern',true);
+					ctrl.$setValidity('dni',true);
 				}else{
-					ctrl.$setValidity('pattern',false);
+					ctrl.$setValidity('dni',false);
 				}
 				return isValid;
 			};
@@ -27,9 +29,9 @@ directives.directive('rcDni',['dniSemanticsValidationService','dniSyntaxValidati
             {
             	var isValid = dniSyntaxValidationService.validateDNISyntax(dni);
             	if (isValid){
-					ctrl.$setValidity('dni',true);
+					ctrl.$setValidity('pattern',true);
 				}else{
-					ctrl.$setValidity('dni',false);
+					ctrl.$setValidity('pattern',false);
 				}
             };
 
@@ -39,4 +41,4 @@ directives.directive('rcDni',['dniSemanticsValidationService','dniSyntaxValidati
             });
 		}
 	};
-}]);
+}
