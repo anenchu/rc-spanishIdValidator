@@ -1,9 +1,8 @@
 describe('Testing legal nif syntax services', function() {
-	var $injector;
+	var $injector = angular.injector(['ng','app.services']);
 	var nifSyntaxValidationServices;
 
-	beforeEach(function(){
-		$injector = angular.injector(['ng','app.services']);
+	beforeEach(function(){		
 		nifSyntaxValidationServices = $injector.get('nifSyntaxValidationServices');
 	});
 

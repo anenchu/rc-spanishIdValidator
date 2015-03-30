@@ -5,10 +5,10 @@ module.exports = function(grunt) {
         server: {
           options: {
             hostname: 'localhost',
-            port: 8080,
+            port: 8081,
             keepalive:true,
             open: {
-              target: 'http://localhost:8080/test/index.html'
+              target: 'http://localhost:8081/test/index.html'
             }            
           },
         }
