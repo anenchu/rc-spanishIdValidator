@@ -1,0 +1,22 @@
+{
+  "name": "rc-spanishIdValidator1",
+  "version": "0.0.0",
+  "homepage": "https://github.com/JoseAntonioRuiz/rc-spanishIdValidator",
+  "authors": [
+    "JoseAntonioRuiz <joseantonioruizguardia@hotmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jasmine": "~2.2.1",
+    "jquery": ">= 1.9.1",
+    "angular-mocks": "~1.3.15"
+  }
+}

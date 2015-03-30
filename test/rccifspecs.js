@@ -11,7 +11,7 @@ describe('Testing rccif directive', function(){
 
 	beforeEach(function(){
 		//Load the module
-		module('app.directives');
+		module('src.directives');
 
 		//set our view html.
 		html = 	'<form name="testform" ng-init="{field:cif=\'\'}">' +
