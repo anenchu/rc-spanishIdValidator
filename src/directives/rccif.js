@@ -1,12 +1,10 @@
-directives.directive('rcCif', [function(){
+directives.directive('rcCif', [ function(){
 	return {
 		require:"ngModel",
 	
 	 link: function (scope, elm, attrs, ctrl){
 		var validationToExecute = function (viewValue) {
-			var currentTypedValue = viewValue;
-
-			if(fullCIFValidation(currentTypedValue)){
+			if(fullCIFValidation(viewValue)){
 				ctrl.$setValidity('cif', true);
 			}else{
 				ctrl.$setValidity('cif', false);
@@ -30,7 +28,7 @@ directives.directive('rcCif', [function(){
 
         function validateCIFSemantic(cif)
         {
-        
+            
             //In valueCif we have the cif number without the first and last characters
             var valueCif=cif.substr(1,cif.length-2);
             var sumPairs=0;
@@ -68,15 +66,6 @@ directives.directive('rcCif', [function(){
                 //Started by .... compared with the last letter
                 if(String.fromCharCode(64+unit).toUpperCase()==cif.substr(cif.length-1,1).toUpperCase())
                     return true;    
-            }else if(firstChar.match(/^[XYZ]$/)){
-                    var newcif;
-                    if(firstChar=="X")
-                        newcif=cif.substr(1);
-                    else if(firstChar=="Y")
-                        newcif="1"+cif.substr(1);
-                    else if(firstChar=="Z")
-                        newcif="2"+cif.substr(1);
-                    return validateDNI(newcif);
             }else if(firstChar.match(/^[ABCDEFGHLM]$/)){
                 //We check if the last value match
                 if(unit==10)

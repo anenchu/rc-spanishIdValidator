@@ -10,6 +10,7 @@ describe('Testing rccif directive', function(){
 		form;
 
 	beforeEach(function(){
+		
 		//Load the module
 		module('src.directives');
 
