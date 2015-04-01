@@ -1,6 +1,5 @@
 services.factory('operationCif', [function(){
-   return{
-   	calculationUnit: function(cif){
+   function calculationUnit(cif){
 		//In valueCif we have the cif number without the first and last characters
         var valueCif=cif.substr(1,cif.length-2);
         var sumPairs=0;
@@ -33,5 +32,7 @@ services.factory('operationCif', [function(){
 
         return unit;		
    	}
-   };
+    return{
+        calculationUnit : calculationUnit
+    }
 }]);

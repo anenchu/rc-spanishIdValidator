@@ -1,4 +1,4 @@
-directives.directive('rcCif', [ function(){
+directives.directive('rcCif', ['operationCif', function(operationCif){
 	return {
 		require:"ngModel",
 	
@@ -28,7 +28,7 @@ directives.directive('rcCif', [ function(){
 
         function validateCIFSemantic(cif)
         {
-            
+            /*
             //In valueCif we have the cif number without the first and last characters
             var valueCif=cif.substr(1,cif.length-2);
             var sumPairs=0;
@@ -58,7 +58,8 @@ directives.directive('rcCif', [ function(){
 
             var unit=String(sum).substr(1,1)
             unit=10-parseInt(unit);
-
+*/
+            var unit = operationCif.calculationUnit(cif);
             var firstChar=cif.substr(0,1).toUpperCase();
 
             if(firstChar.match(/^[FJKNPQRSUVW]$/))

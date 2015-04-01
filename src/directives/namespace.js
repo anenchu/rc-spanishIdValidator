@@ -1,1 +1,1 @@
-var directives = angular.module('src.directives',[]);
+var directives = angular.module('src.directives',['src.services']);
