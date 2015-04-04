@@ -1,5 +1,5 @@
-services.factory('operationCif', [function(){
-   function calculationUnit(cif){
+services.factory('cifSemanticValidationService', [function(){
+   function validationSemantic(cif){
 		//In valueCif we have the cif number without the first and last characters
         var valueCif=cif.substr(1,cif.length-2);
         var sumPairs=0;
@@ -30,9 +30,23 @@ services.factory('operationCif', [function(){
         var unit=String(sum).substr(1,1)
         unit=10-parseInt(unit);   
 
-        return unit;		
+        var firstChar=cif.substr(0,1).toUpperCase();
+
+            if(firstChar.match(/^[FJKNPQRSUVW]$/))
+            {
+                //Started by .... compared with the last letter
+                if(String.fromCharCode(64+unit).toUpperCase()==cif.substr(cif.length-1,1).toUpperCase())
+                    return true;    
+            }else if(firstChar.match(/^[ABCDEFGHLM]$/)){
+                //We check if the last value match
+                if(unit==10)
+                    unit=0;
+                if(cif.substr(cif.length-1,1)==String(unit))
+                    return true;
+            }
+            return false;		
    	}
     return{
-        calculationUnit : calculationUnit
+        validationSemantic : validationSemantic
     }
 }]);
