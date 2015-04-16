@@ -65,10 +65,6 @@ describe('Testing rccif directive', function(){
 
 		//test to see if we get a not valid value
 		expect(form.cif.$valid).toBe(false);
-
-		//jquery check ui
-		//var elemInvalid = $(elem[0]).find('#cif.ng-invalid');
-		//expect(elemInvalid.length).toEqual(1);
 	});
 
 	it('Inform a wrong CIF', function() {
