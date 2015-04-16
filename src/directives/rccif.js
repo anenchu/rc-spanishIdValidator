@@ -17,10 +17,10 @@ directives.directive('rcCif', ['cifSemanticValidationService', function(cifSeman
         */
 
         function fullCIFValidation(cif){
-        	return (validateCIFSintax(cif) && validateCIFSemantic(cif));
+        	return (validateCIFSyntax(cif) && validateCIFSemantic(cif));
         }
         
-        function validateCIFSintax(cif){
+        function validateCIFSyntax(cif){
             var cifPattern = /^[ABCDEFGHJKLMNPQRSUVW][0-9]{7}[0-9A-J]$/;
 
             return cifPattern.test(cif);

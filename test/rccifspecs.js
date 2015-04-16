@@ -45,7 +45,7 @@ describe('Testing rccif directive', function(){
 		form.cif.$setViewValue('P2900005F');
 		scope.$digest();
 
-		//test to see if we get a not valid value
+		//test to see if we get a valid value
 		expect(form.cif.$valid).toBe(true);
 	});
 
@@ -53,9 +53,11 @@ describe('Testing rccif directive', function(){
 		form.cif.$setViewValue('A45003332');
 		scope.$digest();
 
-		//test to see if we get a not valid value
+		//test to see if we get a valid value
 		expect(form.cif.$valid).toBe(true);
 	});
+
+	
 
 	it('Inform a wrong CIF', function() {
 		form.cif.$setViewValue('P2900005H');
@@ -65,8 +67,32 @@ describe('Testing rccif directive', function(){
 		expect(form.cif.$valid).toBe(false);
 
 		//jquery check ui
-		var elemInvalid = $(elem[0]).find('#cif.ng-invalid');
-		expect(elemInvalid.length).toEqual(1);
+		//var elemInvalid = $(elem[0]).find('#cif.ng-invalid');
+		//expect(elemInvalid.length).toEqual(1);
+	});
+
+	it('Inform a wrong CIF', function() {
+		form.cif.$setViewValue('P450038331');
+		scope.$digest();
+
+		//test to see if we get a not valid value
+		expect(form.cif.$valid).toBe(false);
+	});
+
+	it('Inform a wrong CIF', function() {
+		form.cif.$setViewValue('500');
+		scope.$digest();
+
+		//test to see if we get a not valid value
+		expect(form.cif.$valid).toBe(false);
+	});
+
+	it('Inform a wrong CIF', function() {
+		form.cif.$setViewValue('J4564500Y');
+		scope.$digest();
+
+		//test to see if we get a not valid value
+		expect(form.cif.$valid).toBe(false);
 	});
 	
 });
